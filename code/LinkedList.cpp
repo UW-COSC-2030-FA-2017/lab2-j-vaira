@@ -65,6 +65,12 @@ double List::removeFirst()
 	return item;
 }
 
+double List::size()
+{
+    double size = 0;
+
+    return size;
+}
 
 void List::print(ostream & outfile) const
 {
