@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Ace/Documents/GitHub/COSC 2030/lab2-j-vaira/lab-2
+# Install script for directory: C:/Users/Ace/Documents/GitHub/COSC 2030/lab2-j-vaira/lab2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Ace/Documents/GitHub/COSC 2030/lab2-j-vaira/lab-2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Ace/Documents/GitHub/COSC 2030/lab2-j-vaira/lab2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

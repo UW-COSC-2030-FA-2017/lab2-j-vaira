@@ -1,3 +1,4 @@
+//Jasmine Vaira
 // LinkedList.cpp
 
 // tom bailey   0745  5 oct 2010
@@ -17,6 +18,8 @@ List::List()
 List::List(const List & other)
 	: first_(clone(other.first_))
 {
+    //copy size to new list
+    listSize = other.listSize;
 }
 
 
@@ -39,7 +42,8 @@ const List & List::operator=(const List & other)
 		// and get a copy of other
 		first_ = clone(other.first_);
 	}
-
+    //copy list size over
+    listSize = other.listSize;
 	return *this;
 }
 
@@ -53,6 +57,23 @@ bool List::empty() const
 void List::insertAsFirst(double x)
 {
 	first_ = new Node(x, first_);
+    //increase count of list items when another item is inserted
+    listSize = listSize + 1;
+}
+
+void List::insertAsLast(double x)
+{
+    //insert at beginning if list is empty
+    if (first_ == NULL)
+    {
+        first_ = new Node(x, first_);
+    }
+    else
+    {
+       last_ = new Node(x, last_);
+    }
+    //increase count of list items when another item is inserted
+    listSize = listSize + 1;
 }
 
 
@@ -62,7 +83,23 @@ double List::removeFirst()
 	Node * tempPtr = first_;
 	first_ = first_->next_;
 	delete tempPtr;
+    //decrease list count when an item is removed
+    listSize = listSize - 1;
 	return item;
+}
+
+double List::listSum()
+{
+    double sum = 0;
+    if (!empty()) {
+        sum = sum + first_->entry_;
+        Node *ptr = first_->next_;
+        while (ptr != NULL) {
+            sum = sum + ptr->entry_;
+            ptr = ptr->next_;
+        }
+    }
+    return sum;
 }
 
 

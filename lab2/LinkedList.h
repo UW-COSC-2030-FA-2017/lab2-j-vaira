@@ -1,3 +1,4 @@
+//Jasmine Vaira
 // LinkedList.h
 
 // tom bailey   0740  5 oct 2010
@@ -61,10 +62,19 @@ public:
 	//         List.
 	void insertAsFirst(double x);
 
+    void insertAsLast(double x);
+
 	// pre:  this List is not empty.
 	// post: the first double in this List has been removed
 	//         from this List and has been returned.
 	double removeFirst();
+
+    //keep track of size of list
+    int listSize;
+
+    //add up sum of list elements
+    double listSum();
+
 
 private:
 	//*** Inaccessible standard functions ***
@@ -81,7 +91,12 @@ private:
 private:
 	Node * first_;
 
+private:
+    Node * last_;
+
 };
+
+
 
 
 //*** Auxiliary functions ***
